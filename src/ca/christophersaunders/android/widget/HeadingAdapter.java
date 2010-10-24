@@ -64,7 +64,6 @@ public class HeadingAdapter extends BaseAdapter {
 	}
 	
 
-	@Override
 	public int getCount() {
 		int count = 0;
 		for(int i = 0; i < headings.getCount(); i++) {
@@ -109,11 +108,12 @@ public class HeadingAdapter extends BaseAdapter {
 		return -1;
 	}
 
-	@Override
 	public Object getItem(int position) {
 		for(int headingPosition = 0; headingPosition < headings.getCount(); headingPosition++) {
 			if(position == 0) {
-				return headings.getItem(headingPosition);
+				return null;
+			} else {
+				position--;
 			}
 			
 			String heading = headings.getItem(headingPosition);
@@ -121,21 +121,22 @@ public class HeadingAdapter extends BaseAdapter {
 			int adapterLength = adapter.getCount();
 			
 			if(position < adapterLength) {
-				return adapter.getItem(position - 1); 
+				return adapter.getItem(position); 
 			}
 			
 			// We need to ensure that we decrement our position by the
 			// number of items in the adapter as well as for our header
-			position -= (adapterLength + 1);
+			position -= adapterLength;
 		}
 		return null;
 	}
 
-	@Override
 	public long getItemId(int position) {
 		for(int i = 0; i < headings.getCount(); i++) {
 			if(position == 0) {
-				headings.getItemId(i);
+				return -1;
+			} else {
+				position--;
 			}
 			
 			String heading = headings.getItem(i);
@@ -148,12 +149,11 @@ public class HeadingAdapter extends BaseAdapter {
 			
 			// We need to ensure that we decrement our position by the
 			// number of items in the adapter as well as for our header			
-			position -= (adapterLength + 1);
+			position -= adapterLength;
 		}
 		return -1;
 	}
 
-	@Override
 	public View getView(int position, View convertView, ViewGroup parent) {
 		for(int i = 0; i < headings.getCount(); i++) {
 			String heading = headings.getItem(i);
