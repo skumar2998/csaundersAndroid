@@ -19,16 +19,17 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  ******************************************************************************/
-package ca.christophersaunders.android.demos;
+package com.example.android.christophersaunders.demos;
 
 import android.app.Activity;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
-import ca.christophersaunders.android.R;
 import ca.christophersaunders.android.widget.HeadingAdapter;
 import ca.christophersaunders.android.widget.HeadingAdapter.OnHeadingChangeListener;
+
+import com.example.android.christophersaunders.R;
 
 public class HeadingAdapterDemoActivity extends Activity implements OnHeadingChangeListener{
 	

@@ -24,12 +24,17 @@ package ca.christophersaunders.android.widget;
 import java.util.HashMap;
 
 import android.content.Context;
+import android.graphics.Color;
+import android.graphics.ColorFilter;
+import android.graphics.ColorMatrix;
+import android.graphics.PorterDuffColorFilter;
+import android.graphics.PorterDuff.Mode;
+import android.graphics.drawable.Drawable;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Adapter;
 import android.widget.ArrayAdapter;
 import android.widget.BaseAdapter;
-import ca.christophersaunders.android.R;
 
 public class HeadingAdapter extends BaseAdapter {
 	
@@ -53,9 +58,17 @@ public class HeadingAdapter extends BaseAdapter {
 	private String currentHeading = null;
 	private OnHeadingChangeListener onHeadingChangeListener = null;
 	
+	/**
+	 * There is a bug in this constructor in that it is impossible
+	 * to differentiate the difference between headers and entries.
+	 * If you are incorporating this into your own project you can simply
+	 * replace the layout id to the one you will be using in your own
+	 * application
+	 * @param context
+	 */
 	public HeadingAdapter(Context context) {
 		super();
-		headings = new ArrayAdapter<String>(context, R.layout.heading_adapter_heading);
+		headings = new ArrayAdapter<String>(context, android.R.layout.simple_list_item_1);
 	}
 	
 	public HeadingAdapter(Context context, int headingViewResource) {

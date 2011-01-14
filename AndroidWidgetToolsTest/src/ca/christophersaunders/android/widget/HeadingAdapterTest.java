@@ -21,7 +21,6 @@
  ******************************************************************************/
 package ca.christophersaunders.android.widget;
 
-import ca.christophersaunders.android.R;
 import android.test.AndroidTestCase;
 import android.view.View;
 import android.widget.ArrayAdapter;

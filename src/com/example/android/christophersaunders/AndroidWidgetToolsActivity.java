@@ -19,9 +19,8 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  ******************************************************************************/
-package ca.christophersaunders.android;
+package com.example.android.christophersaunders;
 
-import ca.christophersaunders.android.demos.HeadingAdapterDemoActivity;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -30,6 +29,8 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.AdapterView.OnItemClickListener;
+
+import com.example.android.christophersaunders.demos.HeadingAdapterDemoActivity;
 
 public class AndroidWidgetToolsActivity extends Activity implements OnItemClickListener{
     /** Called when the activity is first created. */
